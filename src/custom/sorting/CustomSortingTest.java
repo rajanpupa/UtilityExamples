@@ -4,6 +4,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * Theres also comparator interface which could be used for sorting 
+ * @author Admin
+ *
+ */
 public class CustomSortingTest implements Comparable<CustomSortingTest> {
 	
 	int value=0;
