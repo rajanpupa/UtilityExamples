@@ -3,6 +3,6 @@
 	<classpathentry excluding="com/ktm/unix4j/|com/ktm/annotation/other/" kind="src" path="src"/>
 	<classpathentry kind="src" path="src/com/ktm/annotation/other"/>
 	<classpathentry kind="src" path="src/com/ktm/unix4j"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre1.8.0_40"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
