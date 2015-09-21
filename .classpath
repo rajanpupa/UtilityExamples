@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry excluding="com/ktm/unix4j/|com/ktm/annotation/other/|com/ktm/designpatterns/|com/ktm.multithreading/|com/ktm/reflecction/|unix4j/|patterns/|annotation/|reflection/|generics/|logging/|threading/" kind="src" path="src"/>
-	<classpathentry kind="src" path="src/com/ktm.multithreading"/>
 	<classpathentry kind="src" path="src/unix4j"/>
 	<classpathentry kind="src" path="src/patterns"/>
 	<classpathentry kind="src" path="src/annotation"/>
