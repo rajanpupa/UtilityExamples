@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry excluding="com/ktm/unix4j/|com/ktm/annotation/other/|com/ktm/designpatterns/|com/ktm.multithreading/|com/ktm/reflecction/|unix4j/|patterns/|annotation/|reflection/|generics/|logging/|threading/" kind="src" path="src"/>
+	<classpathentry excluding="com/ktm/unix4j/|com/ktm/annotation/other/|com/ktm/designpatterns/|com/ktm.multithreading/|com/ktm/reflecction/|unix4j/|patterns/|annotation/|reflection/|generics/|logging/|threading/|test/|serialization/|io/|exception/|network/" kind="src" path="src"/>
 	<classpathentry kind="src" path="src/unix4j"/>
 	<classpathentry kind="src" path="src/patterns"/>
 	<classpathentry kind="src" path="src/annotation"/>
@@ -8,6 +8,11 @@
 	<classpathentry kind="src" path="src/generics"/>
 	<classpathentry kind="src" path="src/logging"/>
 	<classpathentry kind="src" path="src/threading"/>
+	<classpathentry kind="src" path="src/test"/>
+	<classpathentry kind="src" path="src/serialization"/>
+	<classpathentry kind="src" path="src/io"/>
+	<classpathentry kind="src" path="src/exception"/>
+	<classpathentry kind="src" path="src/network"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre1.8.0_40"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

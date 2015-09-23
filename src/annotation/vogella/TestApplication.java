@@ -2,15 +2,15 @@ package vogella;
 
 import java.lang.reflect.Method;
 
-public class MyTest {
+public class TestApplication {
 
     public static void main(String[] args) {
 
-        AnnotationRunner runner = new AnnotationRunner();
+        SimpleClass runner = new SimpleClass();
         Method[] methods = runner.getClass().getMethods();
 
         for (Method method : methods) {
-            CanRun2 annos = method.getAnnotation(CanRun2.class);
+            CanRunAnnotation annos = method.getAnnotation(CanRunAnnotation.class);
             if (annos != null) {
                 try {
                     method.invoke(runner);

@@ -1,17 +1,17 @@
 package vogella;
 
-public class AnnotationRunner {
+public class SimpleClass {
 
     public void method1() {
         System.out.println("method1");
     }
 
-    @CanRun2
+    @CanRunAnnotation
     public void method2() {
         System.out.println("method2");
     }
 
-    @CanRun2
+    @CanRunAnnotation
     public void method3() {
         System.out.println("method3");
     }
@@ -20,12 +20,12 @@ public class AnnotationRunner {
         System.out.println("method4");
     }
 
-    @CanRun2
+    @CanRunAnnotation
     public void method5() {
         System.out.println("method5");
     }
     
-    @CanRun2
+    @CanRunAnnotation
     public void method7() {
         System.out.println("method7");
     }

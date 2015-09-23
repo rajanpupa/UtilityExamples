@@ -14,3 +14,15 @@
 	* 
 	
 	And many more to come.
+	
+	* OOp concepts
+	* Abstract classes and interfaces
+	* Constructors
+	* File IO and serializable
+	* Collections - List, Map, Set
+	* Access modifiers
+	* Exception - Checked, Unchecked
+	* Static, Final, Volatile, synchronized, transient, this super etc.
+	* JVM  and memory Management
+	* Multithreading and Synchronization
+	* JDBC

@@ -1,4 +1,4 @@
-package com.ktm.freaks.email;
+package email.old;
 
 public class RMail {
 
