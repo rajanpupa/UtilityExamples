@@ -1,4 +1,4 @@
-package thread;
+package threadMapReduce;
 
 public class Thread1 implements Runnable{
 

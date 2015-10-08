@@ -1,4 +1,4 @@
-package thread;
+package threadMapReduce;
 
 
 import java.io.BufferedReader;

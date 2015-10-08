@@ -5,6 +5,14 @@ package waitnotifytutorialspoint;
  * When chat object execute notify() method, threads waiting on its monitor will wake up and run.
  */
 
+public class TestThread {
+    public static void main(String[] args) {
+        Chat m = new Chat();
+        new T1(m);
+        new T2(m);
+    }
+}
+
 class Chat {
     boolean flag = false;
 
@@ -67,10 +75,4 @@ class T2 implements Runnable {
         }
     }
 }
-public class TestThread {
-    public static void main(String[] args) {
-        Chat m = new Chat();
-        new T1(m);
-        new T2(m);
-    }
-}
+
