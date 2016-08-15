@@ -18,6 +18,13 @@ public class CrawledSites {
 			if (!crawledSites.contains(site)) {
 				linkedSites.add(site);
 			}
+			for(int i=0; i< 3; i++){
+				try {
+					Thread.sleep(400);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
 		}
 	}
 
@@ -30,6 +37,13 @@ public class CrawledSites {
 			return null;
 		}
 		synchronized (this) {
+			for(int i=0; i< 3; i++){
+				try {
+					Thread.sleep(400);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
 			// Need to check again if size has changed
 			if (linkedSites.size() > 0) {
 				String s = linkedSites.get(0);
@@ -37,6 +51,7 @@ public class CrawledSites {
 				crawledSites.add(s);
 				return s;
 			}
+			
 			return null;
 		}
 	}

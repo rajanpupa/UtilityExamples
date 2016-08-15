@@ -15,7 +15,7 @@ public class Notifier implements Runnable {
         try {
             Thread.sleep(1000);
             synchronized (msg) {
-                msg.setMsg(name+"=> Notifier work done.");
+                msg.setMsg(name+"=> has changed the original message before notifying.");
                 //msg.notify();
                 msg.notifyAll();
             }

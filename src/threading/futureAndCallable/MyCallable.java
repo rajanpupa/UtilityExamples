@@ -16,6 +16,9 @@ public class MyCallable implements Callable<Long> {
 		for (long i = 0; i <= 100; i++) {
 			sum += i;
 		}
+		//DELAY
+		Thread.sleep(100);
+			
 		return sum;
 	}
 

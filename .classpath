@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry excluding="com/ktm/unix4j/|com/ktm/annotation/other/|com/ktm/designpatterns/|com/ktm.multithreading/|com/ktm/reflecction/|unix4j/|patterns/|annotation/|reflection/|generics/|logging/|threading/|test/|serialization/|io/|exception/|network/|stream/" kind="src" path="src"/>
+	<classpathentry excluding="com/ktm/unix4j/|com/ktm/annotation/other/|com/ktm/designpatterns/|com/ktm.multithreading/|com/ktm/reflecction/|unix4j/|patterns/|annotation/|reflection/|generics/|logging/|threading/|test/|serialization/|io/|exception/|network/|stream/|observer/" kind="src" path="src"/>
 	<classpathentry kind="src" path="src/unix4j"/>
 	<classpathentry kind="src" path="src/patterns"/>
 	<classpathentry kind="src" path="src/annotation"/>
@@ -15,6 +15,5 @@
 	<classpathentry kind="src" path="src/network"/>
 	<classpathentry kind="src" path="src/stream"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="D:/Workspaces/personal/UtilityExamples/lib/javax.mail.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
