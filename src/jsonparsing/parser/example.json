@@ -1,0 +1,17 @@
+{
+    "abcList":[
+        {
+            "keyA":"valA",
+            "lstB":[{
+                "keyC":"valC"
+            },{
+                "keyC":"valC1"
+            }]
+        },{
+            "keyA":"valA",
+            "lstB":[{
+                "keyC":"valC2"
+            }]
+        }
+    ]
+}
