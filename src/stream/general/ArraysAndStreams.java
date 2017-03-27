@@ -29,7 +29,7 @@ public class ArraysAndStreams {
 		System.out.printf("Values greater than 4: %s%n", greaterThan4);
 
 		// filter values greater than 4 then sort the results
-		System.out.printf("Sorted values greater than 4: %s%n",
+		System.out.printf("Sorted values greater than 4: %s%n%n",
 
 		Arrays.stream(values)
 			.filter(value -> value > 4)

@@ -35,6 +35,11 @@ public class ArraysAndStreams2{
                .filter(s -> s.compareToIgnoreCase("m") > 0)
                .sorted(String.CASE_INSENSITIVE_ORDER.reversed())
                .collect(Collectors.toList()));
+      
+      Arrays.stream(strings)
+      .filter(s -> s.compareToIgnoreCase("m") > 0)
+      .sorted()
+      .collect(Collectors.toList());
 
    }
 

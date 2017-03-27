@@ -1,5 +1,6 @@
 package general;
-import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class IntStreamOperations
@@ -114,6 +115,13 @@ public class IntStreamOperations
       System.out.printf("Sum of integers from 1 to 10: %d%n",
 
          IntStream.rangeClosed(1, 10).sum());
+      
+      List<Integer> lst = IntStream.rangeClosed(1, 100)
+    		  .map(a->a*2)
+    		  .boxed()
+    		  .collect(Collectors.toList());
+      
+      System.out.printf(" int list generated: %s%n " , lst);
 
    } 
 

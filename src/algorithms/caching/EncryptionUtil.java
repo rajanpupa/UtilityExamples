@@ -3,7 +3,11 @@ package caching;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-
+/**
+ * 
+ * @author Rajan Upadhyay
+ *
+ */
 public class EncryptionUtil {
 	
 	private static Cache<String, String> cache = new Cache<String, String>(10);
