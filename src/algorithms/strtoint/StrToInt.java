@@ -9,7 +9,8 @@ public class StrToInt {
 		char c;
 		for (int i=0; i<str.length(); i++){
 			c = str.charAt(i);
-			num = num *10 + (c - '0');
+			num = num * 10;
+			num = num + (c - '0');
 		}
 		
 		System.out.println("final number plus one = " + (num +1));
