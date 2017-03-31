@@ -34,6 +34,11 @@ public class Problem2SubsetSum {
 		if (sum == k) {
 			printArray(subset);
 		}
+		
+		if(sum >= k){
+			//System.out.println("returning");
+			return;
+		}
 
 		// add element in subset, set[index + i] until index + i < set.length
 		for(int i=1; index + i < set.length; i++){
