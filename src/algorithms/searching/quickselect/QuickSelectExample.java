@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 public class QuickSelectExample {
 
 	public static void main(String[] args) {
-		int[] arr = {1,1,1};
+		int[] arr = {5,7,6,4,8,2,1};
 		
 		QuickSelectExample q = new QuickSelectExample();
 		
@@ -20,7 +20,7 @@ public class QuickSelectExample {
 		
 	}
 	
-	// return k'th smallest element from the array
+	// return k'th smallest element from an unsorted array
 	public int quickSelect(int[] arr, int rank){
 		int lrank = rank;
 		List<Integer> lst = Arrays.stream(arr).boxed().collect(Collectors.toList());
