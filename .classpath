@@ -19,6 +19,7 @@
 	<classpathentry kind="src" path="src/interfaces"/>
 	<classpathentry kind="src" path="src/datastructures"/>
 	<classpathentry kind="src" path="src/questions"/>
+	<classpathentry kind="src" path="oop"/>
 	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
