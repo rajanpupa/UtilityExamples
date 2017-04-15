@@ -1,35 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" path="src/unix4j"/>
-	<classpathentry kind="src" path="src/patterns"/>
-	<classpathentry kind="src" path="src/annotation"/>
-	<classpathentry kind="src" path="src/reflection"/>
-	<classpathentry kind="src" path="src/generics"/>
-	<classpathentry kind="src" path="src/logging"/>
-	<classpathentry kind="src" path="src/threading"/>
-	<classpathentry kind="src" path="src/serialization"/>
-	<classpathentry kind="src" path="src/io"/>
-	<classpathentry kind="src" path="src/exception"/>
-	<classpathentry kind="src" path="src/network"/>
-	<classpathentry kind="src" path="src/stream"/>
-	<classpathentry kind="src" path="src/algorithms"/>
-	<classpathentry kind="src" path="src/collections"/>
-	<classpathentry kind="src" path="src/jsonparsing"/>
-	<classpathentry kind="src" path="src/com"/>
-	<classpathentry kind="src" path="src/interfaces"/>
-	<classpathentry kind="src" path="src/datastructures"/>
-	<classpathentry kind="src" path="src/questions"/>
-	<classpathentry kind="src" path="oop"/>
-	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
-		<attributes>
-			<attribute name="maven.pomderived" value="true"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
-		<attributes>
-			<attribute name="maven.pomderived" value="true"/>
-		</attributes>
-	</classpathentry>
 	<classpathentry kind="src" output="target/classes" path="src/main/java">
 		<attributes>
 			<attribute name="optional" value="true"/>
@@ -39,6 +9,16 @@
 	<classpathentry kind="src" output="target/test-classes" path="src/test/java">
 		<attributes>
 			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
+		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
