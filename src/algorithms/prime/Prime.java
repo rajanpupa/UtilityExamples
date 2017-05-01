@@ -3,7 +3,7 @@ package prime;
 public class Prime {
 
 	public static void main(String[] args) {
-		primeNumBetween(1, 100000);
+		primeNumBetween(100, 1000);
 	}
 	
 	private static void primeNumBetween(int a, int b) {
@@ -12,8 +12,8 @@ public class Prime {
 		
 		int count = 0;
 		for(int i=a; i<b; i++){
-			if(isPrime(i)){
-				//System.out.print(i + ", ");
+			if(isPrime2(i)){
+				System.out.print(i + ", ");
 				count ++;
 			}
 		}

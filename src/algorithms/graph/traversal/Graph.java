@@ -15,7 +15,7 @@ public class Graph {
 		adj = new LinkedList[size];
 		
 		for(int i=0; i<size; i++){
-			adj[i] = new LinkedList();
+			adj[i] = new LinkedList<>();
 		}
 	}
 	
@@ -54,7 +54,7 @@ public class Graph {
 	private void bfsUtil(int elem, boolean[] visited) {
 		visited[elem] = true;
 		
-		Queue<Integer> q = new LinkedList();
+		Queue<Integer> q = new LinkedList<Integer>();
 		q.add(elem);
 		
 		while(!q.isEmpty()){

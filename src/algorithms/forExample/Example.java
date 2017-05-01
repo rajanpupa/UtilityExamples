@@ -1,53 +1,78 @@
 package forExample;
 
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.PriorityQueue;
+import java.util.Queue;
+
 public class Example {
 	
-	int find (int a, int[] arr){
-		if(arr==null || arr.length==0)return -1;
-		if(arr.length==1 && arr[0]!=a) return -1;
-		
-		int start = 0, end = arr.length-1;
-		int mid;
-		while(start<=end){
-			
-			if(end-start<2){
-				if(arr[start]==a)return start;
-				if(arr[end]==a) return end;
-				else return -1;
-			}
-			
-			mid=start + (end-start)/2;
-			
-			
-			
-			//System.out.printf("start=%d, end=%d, mid=%d \n", start, end, mid);
-			
-			if(arr[mid]==a)return mid;
-
-			if(arr[start]<arr[mid]){
-				if(a>arr[mid]) start = mid+1;
-				else end = mid-1;
-			}else{
-				if(a<arr[mid]){
-					end=mid-1;
-				}else if(a>arr[mid] && a>=arr[start]){
-					end=mid-1;
-				}else{
-					start = mid+1;
-				}
-			}
-		}
-		return -1;
-	}
+	
 
 	public static void main(String[] args) {
-		int a = 5;
-		int[] arr = {15,16,19,20,25,1,3,4,5,7,10,14};
+       // priorityQueue();
 		
-		Example e = new Example();
+		String s = "abcde";
+		String s2 = "fghij";
 		
-		//int i=9;
-		for(int i=0; i<arr.length; i++)
-			System.out.printf("index of %d is: %d \n",arr[i], e.find(arr[i], arr));
+		while(!s2.startsWith(s) && s.length()>0){
+			s = s.substring(0, s.length()-1);
+			System.out.println(s);
+		}
+    }
+
+	private static void priorityQueue() {
+		int [] arr1 = {2, -8, 3, -2, 4, -10};
+        int [] arr2 = {-2, -3, -5, -1, -8, -1};
+        
+        
+        
+        //System.out.println(findMaxSubseqSum(arr2));
+        
+        Queue<Integer> q = new PriorityQueue<>(new Comparator<Integer>() {
+        	@Override
+        	public int compare(Integer o1, Integer o2) {
+        		return o2-o1;
+        	}
+		});
+        q.addAll(Arrays.asList(10, 15, 5,4,2,3));
+        
+        System.out.println(q.remove());
+	}
+	
+	public static int findMaxSubseqSum(int[] arr){
+		if(arr==null || arr.length==0) return Integer.MIN_VALUE;
+		
+		int sum = arr[0];
+		int maxSum = arr[0];
+		boolean continuous = true;
+		
+		int min = arr[0], max=arr[0];
+		
+		for(int i=1; i<arr.length; i++){
+			if(min > arr[i]) min = arr[i];
+			if(max<arr[i]) max = arr[i];
+			
+			if(continuous){
+				if(sum + arr[i] > sum || sum+arr[i]>0){
+					sum += arr[i];
+					continuous = true;
+				}else{
+					if(arr[i] > sum) sum = arr[i];
+					continuous = false;
+				}
+			}else{
+				if(arr[i]>sum){
+					sum = arr[i];
+					continuous=true;
+				}
+			}
+			
+			if(sum > maxSum){
+				maxSum = sum;
+			}
+		}
+		
+		return maxSum;
 	}
 }
