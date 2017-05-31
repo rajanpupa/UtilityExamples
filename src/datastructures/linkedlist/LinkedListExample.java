@@ -20,7 +20,7 @@ public class LinkedListExample {
 		l.forEach(System.out::println);;
 		System.out.println("-------------------------");
 		
-		l.remove(2);
+		l.remove(1);
 		l.forEach(System.out::println);;
 		System.out.println("-------------------------");
 		

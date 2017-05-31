@@ -7,19 +7,81 @@ import java.util.Queue;
 
 public class Example {
 	
+	public static boolean find(int[] arr, int data){
+		
+		int index = 0;
+		for(int i=0; i<arr.length; ){
+			if(data == arr[i]){
+				return true;
+			}
+			else if (data > arr[i]){
+				i = data-arr[i] + index;
+			}else if(data < arr[i]){
+				i = arr[i] -data + index;
+			}
+			
+			index++;
+		}
+		
+		return false;
+	}
+	
 	
 
 	public static void main(String[] args) {
        // priorityQueue();
 		
+		//problem1();
+		
+		//example3();
+		
+		
+		
+    }
+	
+	class Node{
+		int data;
+		
+		public Node(int data){
+			this.data = data;
+		}
+		
+		@Override
+		public String toString() {
+			return "" + data;
+		}
+	}
+
+
+
+	private static void example3() {
+		int [] arr = {5,6,7,6,5,4,5,4,3,2,1};
+		
+		int data = 0;
+		
+		System.out.println(find(arr, data));
+	}
+
+
+
+	private static void problem1() {
+		int [] a = {2,5};
+		int[] b = a;
+		
+		b[0] = 6;
+		
+		System.out.println(a[0]);
+		
 		String s = "abcde";
+		
+		System.out.println("character at 4th index = " + s.charAt(4));
 		String s2 = "fghij";
 		
 		while(!s2.startsWith(s) && s.length()>0){
 			s = s.substring(0, s.length()-1);
 			System.out.println(s);
 		}
-    }
+	}
 
 	private static void priorityQueue() {
 		int [] arr1 = {2, -8, 3, -2, 4, -10};
