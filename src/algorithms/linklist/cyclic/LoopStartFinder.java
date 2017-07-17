@@ -39,8 +39,7 @@ public class LoopStartFinder {
 			if(l2 != null){
 				l2 = l2.next;
 			}
-		}
-		while(l1 != null && l2 != null && l1.value != l2.value);
+		}while(l1 != null && l2 != null && l1.value != l2.value);
 		
 		if(l2==null){
 			// not cyclic

@@ -8,6 +8,11 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
+/*
+ * Callable Interface is like Runnable, but also returns some result.
+ * callable can be submitted to executor Service via submit method, will return a future object.
+ * Future object is an async object, which can get() result, or check the status of the callable obj
+ */
 public class CallableFutures {
 	private static final int NTHREDS = 10;
 
@@ -32,7 +37,7 @@ public class CallableFutures {
 				e.printStackTrace();
 			}
 		}
-		System.out.println(sum);
+		System.out.println("Sum="+sum);
 		executor.shutdown();
 	}
 }

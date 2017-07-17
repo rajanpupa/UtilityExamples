@@ -21,13 +21,11 @@ public class Trie {
 			if(t1 == null){
 				t1 = new Trie();
 				t2.getNextMap().put(c, t1);
-				if(i == word.length()-1){
-					t1.setEndOfWord(true);
-				}
-			}else{
-				if(i == word.length()-1){
-					t1.setEndOfWord(true);
-				}
+				
+			}
+			
+			if(i == word.length()-1){
+				t1.setEndOfWord(true);
 			}
 		}
 	}
@@ -124,7 +122,8 @@ public class Trie {
 	
 	public static void main(String[] args) {
 		Trie t = new Trie();
-		List<String> words = Arrays.asList("apple", "arts", "oranges", "ball", "alphabet", "antique", "an");
+		List<String> words = Arrays.asList("apple", "arts", "oranges", "ball", "alphabet", "antique", "an"
+				,"appler", "pple");
 		
 		for(String str : words){
 			t.insertWord(str);
@@ -133,5 +132,7 @@ public class Trie {
 		System.out.println("isWord   abc = " + t.isWord("abc"));
 		System.out.println("isWord   apple = " + t.isWord("apple"));
 		System.out.println("isPrefix app = " + t.isPrefix("app"));
+		System.out.println("isPrefix pple = " + t.isPrefix("pple"));
+		System.out.println("isPrefix appler = " + t.isPrefix("appler"));
 	}
 }

@@ -106,7 +106,10 @@ public class FindSubstringPattern {
 		
 		return l;
 	}
-
+	
+	/*
+	 * returns a longest matching suffix array of the pattern input
+	 */
 	private int[] lms(String p) {
 		int [] l = new int[p.length()];
 		int i =1; 
