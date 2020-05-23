@@ -1,4 +1,4 @@
-package finallytest;
+package test.finallytest;
 
 public class FinallyTest {
 	public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package oop;
+package test.oop;
 
 public class TestApp {
 	
