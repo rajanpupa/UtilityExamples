@@ -17,7 +17,7 @@ package dynamicprogramming.knapsack;
 public class KnapsackExample {
 
 	public static int calculateMaxValue(int W, int[] vi, int[] wi){
-		
+		 
 		int n = vi.length;
 		int [][] k = new int[n + 1][W+1];
 		
@@ -26,9 +26,13 @@ public class KnapsackExample {
 				if(i==0 || w==0){
 					k[i][w] = 0;
 				}else if(wi[i-1] <= w){
-					k[i][w] = Math.max(vi[i-1] + k[i-1][w-wi[i-1]], k[i-1][w-wi[i-1]] );
+					// check if the value is max if we pick current weight or without picking cur weight
+					k[i][w] = Math.max(
+								vi[i-1] + k[i-1][w-wi[i-1]], // cur value + value of (remaining weight limit if cur weight is picked)
+								k[i-1][w] // max value until cur weight was picked
+							);
 				}else{
-					k[i][w] = k[i-1][w];
+					k[i][w] = k[i-1][w]; 
 				}
 			}
 		}
