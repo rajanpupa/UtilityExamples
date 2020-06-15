@@ -13,6 +13,29 @@ package dynamicprogramming.rodcutting;
  */
 public class RodCutting {
 	
+	public static void main(String[] args) {
+		int [] pi = {0,1,5,8,9,10,17,17,20,24,30};// prices
+		int n = 8;
+		int[] r = new int[n+1];
+		
+		for(int i=0; i<=n; i++) r[i] = -9999;
+		
+		//to support n > pi.length
+		if( n > pi.length ) {
+			int[] pi2 = new int[n+1];
+			for(int i=0; i<pi.length; i++) pi2[i] = pi[i];
+			for(int i=pi.length; i<n; i++) pi2[i] = pi[pi.length-1];
+			pi = pi2;
+		}
+		
+		RodCutting rc = new RodCutting(pi, n);
+		int optimumRevenue ;
+		//optimumRevenue= rc.memoizedCutRodAux(pi, n, r);
+		optimumRevenue = rc.bottomUpRod(pi, n, r);
+		
+		System.out.println("optimal revenue=" + optimumRevenue);
+	}
+	
 	int [] prices;
 	int n ;
 	
@@ -30,22 +53,22 @@ public class RodCutting {
 	 * Top down approach.
 	 * while calculating the top optimum cost, all the bottom optimum are calculated and memoized
 	 */
-	public int memoizedCutRodAux(int[] p, int n, int[] r){
-		int q=0;
+	public int memoizedCutRodAux(int[] price, int len, int[] rev){
+		int q;
 		
-		if(r[n] >= 0)	return r[n];
+		if(rev[len] >= 0)	return rev[len];
 		
-		if(n==0){
+		if(len==0){
 			q = 0;
 		}else{
 			q = -9999;
-			for(int i=1; i<=n; i++){
-				q = Math.max(q, p[i] + memoizedCutRodAux(p, n-i, r));
+			for(int i=1; i<=len; i++){
+				q = Math.max(q, price[i] + memoizedCutRodAux(price, len-i, rev));
 			}
 		}
-		r[n] = q;
+		rev[len] = q;
 		
-		System.out.println("returning revenue for n=" + n + " is " + q);
+		System.out.println("returning revenue for n=" + len + " is " + q);
 		return q;
 	}
 	
@@ -76,28 +99,7 @@ public class RodCutting {
 	}
 	
 	
-	public static void main(String[] args) {
-		int [] pi = {0,1,5,8,9,10,17,17,20,24,30};// prices
-		int n = 9;
-		int[] r = new int[n+1];
-		
-		for(int i=0; i<=n; i++) r[i] = -9999;
-		
-		//to support n > pi.length
-		if(n>pi.length){
-			int[] pi2 = new int[n+1];
-			for(int i=0; i<pi.length; i++) pi2[i] = pi[i];
-			for(int i=pi.length; i<n; i++) pi2[i] = pi[pi.length-1];
-			pi = pi2;
-		}
-		
-		RodCutting rc = new RodCutting(pi, n);
-		int optimumRevenue ;
-		//optimumRevenue= rc.memoizedCutRodAux(pi, n, r);
-		optimumRevenue = rc.bottomUpRod(pi, n, r);
-		
-		System.out.println("optimal revenue=" + optimumRevenue);
-	}
+	
 }
 
 /*

@@ -13,6 +13,41 @@ package dynamicprogramming.rodcutting;
  */
 public class PrintRodCutting {
 	
+	/*
+	 * prints the actual lengths n is divided into
+	 */
+	public static void main(String[] args) {
+		int [] pi = {0,1,5,8,9,10,17,17,20,24,30};// prices
+		int n = 14; // length of our rod
+		int[] r = new int[n+1];
+		
+		for(int i=0; i<=n; i++) r[i] = -9999;
+		
+		//to support n > pi.length
+		if( n >= pi.length ){
+			int[] pi2 = new int[n+1];
+			for(int i=0; i<pi.length; i++) pi2[i] = pi[i];
+			for(int i=pi.length; i<n; i++) pi2[i] = pi[pi.length-1];
+			pi = pi2;
+		}
+		
+		PrintRodCutting rc = new PrintRodCutting();
+		int[] s ;
+		//optimumRevenue= rc.memoizedCutRodAux(pi, n, r);
+		s = rc.bottomUpRod(pi, n, r);
+		
+		int value=0;
+		
+		int n2 = n;
+		while( n2 > 0 ){
+			System.out.print(s[n2] + ", ");
+			value += r[s[n2]];
+			n2 -= s[n2];
+		}
+		
+		System.out.println("revenue = " + value);
+	}
+	
 	
 	public PrintRodCutting(){}
 	
@@ -40,85 +75,53 @@ public class PrintRodCutting {
 	}
 	
 	/*
-	 * Bottom top approach
+	 * Bottom top approach <br/>
+	 * Returns all the cuts
 	 */
-	public int[] bottomUpRod(int[] p, int n, int[] r){
-		int q =-9999;
-		int[] s = new int[n+2];
+	public int[] bottomUpRod(int[] price, int len, int[] revenue){
+		int max;
+		int[] splits = new int[ len + 2 ];
 		
-		r[0] = 0;
-		for(int i=1; i<=n; i++){
-			q = -9999;
-			if(i==11){
-				q = -9999;
-			}
-			for(int j=1; j<=i; j++){
-				if(q < p[j] + r[i-j]){
-					q =  p[j] + r[i-j];
-					s[i] = j;
+		// revenue of 0 length is 0
+		revenue[0] = 0;
+		
+		for(int i = 1; i <= len; i++){
+			max = -9999;
+			
+			for ( int j = 1; j <= i; j++ ) {
+				if(max < price[j] + revenue[i-j]){
+					max =  price[j] + revenue[i-j];
+					splits[i] = j;
 				}
 			}
-			r[i] = q;
+			revenue[i] = max;
 		}
-		return s;
+		return splits;
 	}
 	
 	/*
-	 * Bottom top approach
+	 * Bottom top approach<br/>
+	 * 
+	 * Returns only the top revenue
 	 */
-	public int bottomUpRodInt(int[] p, int n, int[] r){
-		int q =-9999;
-		//int[] s = new int[n+2];
+	public int bottomUpRodInt(int[] p, int n, int[] revenue){
+		int max ;
 		
-		r[0] = 0;
+		// price of len 0 is 0
+		revenue[0] = 0;
+		
 		for(int i=1; i<=n; i++){
-			q = -9999;
-			if(i==11){
-				q = -9999;
-			}
+			max = -9999;
+			
 			for(int j=1; j<=i; j++){
-				
-				q = Math.max(q, p[j]+r[i-j]);
+				max = Math.max( max, p[j] + revenue[i-j]);
 			}
-			r[i] = q;
+			revenue[i] = max;
 		}
-		return r[n];
+		return revenue[n];
 	}
 	
-	/*
-	 * prints the actual lengths n is divided into
-	 */
-	public static void main(String[] args) {
-		int [] pi = {0,1,5,8,9,10,17,17,20,24,30};// prices
-		int n = 14;
-		int[] r = new int[n+1];
-		
-		for(int i=0; i<=n; i++) r[i] = -9999;
-		
-		//to support n > pi.length
-		if(n>=pi.length){
-			int[] pi2 = new int[n+1];
-			for(int i=0; i<pi.length; i++) pi2[i] = pi[i];
-			for(int i=pi.length; i<n; i++) pi2[i] = pi[pi.length-1];
-			pi = pi2;
-		}
-		
-		PrintRodCutting rc = new PrintRodCutting();
-		int[] s ;
-		//optimumRevenue= rc.memoizedCutRodAux(pi, n, r);
-		s = rc.bottomUpRod(pi, n, r);
-		
-		int value=0;
-		
-		int n2 = n;
-		while(n2>0){
-			System.out.print(s[n2] + ", ");
-			value += r[s[n2]];
-			n2 -= s[n2];
-		}
-		
-		System.out.println("revenue = " + value);
-	}
+	
 }
 
 /*
